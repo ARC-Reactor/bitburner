@@ -1,7 +1,7 @@
 export async function main(ns) {
     // Defines the "target server", which is the server
     // that we're going to hack. In this case, it's the list of currently visible servers
-    const infectScript = "test-n00dles.js";
+    const infectScript = "basic.js";
     const exeFiles = [
       "BruteSSH.exe",
       "FTPCrack.exe",
