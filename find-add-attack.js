@@ -1,7 +1,7 @@
 export async function main(ns) {
     // Defines the "target server", which is the server
     // that we're going to hack. In this case, it's the list of currently visible servers
-    const infectScript = "basic.js";
+    const infectScript = "test-n00dles.js";
     const exeFiles = [
       "BruteSSH.exe",
       "FTPCrack.exe",
@@ -9,34 +9,76 @@ export async function main(ns) {
       "HTTPWorm.exe",
       "SQLInject.exe"
     ]
-    let targets = [
-      "n00dles",
-      "nectar-net",
-      "max-hardware",
-      "neo-net",
-      "omega-net",
-      "foodnstuff",
-      "sigma-cosmetics",
-      "joesguns",
-      "hong-fang-tea",
-      "harakiri-sushi",
-      "CSEC",
-      "phantasy",
-      "netlink",
-      "zb-institute",
-      "crush-fitness",
-      "I.I.I.I",
-      "avmnite-02h",
-      "syscore",
-      "iron-gym",
-      "zer0",
-      "silver-helix",
-      "the-hub",
-      "computek",
-      "johnson-ortho",
-      "rothman-uni",
-      "summit-uni",
-      "catalyst",
+    const targets = [
+        "n00dles",
+        "zer0",
+        "nectar-net",
+        "omega-net",
+        "the-hub",
+        "catalyst",
+        "netlink",
+        "zb-institute",
+        "summit-uni",
+        "I.I.I.I",
+        "rho-construction",
+        "snap-fitness",
+        "alpha-ent",
+        "global-pharm",
+        "aevum-police",
+        "CSEC",
+        "foodnstuff",
+        "sigma-cosmetics",
+        "joesguns",
+        "hong-fang-tea",
+        "harakiri-sushi",
+        "max-hardware",
+        "neo-net",
+        "avmnite-02h",
+        "silver-helix",
+        "computek",
+        "johnson-ortho",
+        "rothman-uni",
+        "lexo-corp",
+        "syscore",
+        "millenium-fitness",
+        "galactic-cyber",
+        "unitalife",
+        "zeus-med",
+        "aerocorp",
+        "omnia",
+        "icarus",
+        "zb-def",
+        "univ-energy",
+        "infocomm",
+        "nova-med",
+        "deltaone",
+        "defcomm",
+        "taiyang-digital",
+        "solaris",
+        "crush-fitness",
+        "phantasy",
+        "iron-gym",
+        "microdyne",
+        "fulcrumtech",
+        "run4theh111z",
+        "clarkinc",
+        "megacorp",
+        "ecorp",
+        "blade",
+        "b-and-a",
+        "kuai-gong",
+        "nwo",
+        "applied-energetics",
+        "helios",
+        "vitalife",
+        "omnitek",
+        ".",
+        "titan-labs",
+        "stormtech",
+        "4sigma",
+        "powerhouse-fitness",
+        "fulcrumassets",
+        "The-Cave",
       ]
 
 
@@ -92,28 +134,16 @@ export async function main(ns) {
 
     for (let target of targets){
       infect(target);
+      getRoot(target);
     }
-    // Infinite loop that continously hacks/grows/weakens the target server
+
     while(true) {
       for (let target of targets){
         if  (ns.hasRootAccess(target) == true){
-          let moneyThresh = ns.getServerMaxMoney(target);
-          let securityThresh = ns.getServerMinSecurityLevel(target);
-          if (ns.getServerSecurityLevel(target) > securityThresh) {
-            // If the server's security level is above our threshold, weaken it
-            await ns.weaken(target);
-          }
-          else if (ns.getServerMoneyAvailable(target) < moneyThresh) {
-            // If the server's money is less than our threshold, grow it
-            await ns.grow(target);
-          }
-          else {
-            // Otherwise, hack it
-            await ns.hack(target);
-          }
-            
+          await ns.sleep(5000)            
         }
         else{getRoot(target);
+        await ns.sleep(5000)
         }
       }
     }
