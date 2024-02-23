@@ -2,7 +2,7 @@
 export async function main(ns) {
     // How much RAM each purchased server will have. In this case, it'll
     // be 8GB.
-    const ram = 32768;
+    const ram = 16;
 
     // Iterator we'll use for our loop
     let i = 0;
@@ -26,6 +26,7 @@ export async function main(ns) {
             ++i;
             await ns.sleep(60000);
         }
+        await ns.sleep(5000);
     }
     
         await ns.sleep(60000);
@@ -46,6 +47,7 @@ export async function main(ns) {
             ++i;
             await ns.sleep(60000);
         }
+        await ns.sleep(5000);
     }
     
         await ns.sleep(60000);
@@ -66,9 +68,10 @@ export async function main(ns) {
             ++i;
             await ns.sleep(60000);
         }
+        await ns.sleep(5000);
     }
     
-        await ns.sleep(60000);
+        
     while (i < 20) {
         // Check if we have enough money to purchase a server
         if (ns.getServerMoneyAvailable("home") > ns.getPurchasedServerCost(ram)) {
@@ -86,9 +89,10 @@ export async function main(ns) {
             ++i;
             await ns.sleep(60000);
         }
+        await ns.sleep(5000);
     }
     
-        await ns.sleep(60000);
+
     while (i < 25) {
         // Check if we have enough money to purchase a server
         if (ns.getServerMoneyAvailable("home") > ns.getPurchasedServerCost(ram)) {
@@ -106,7 +110,8 @@ export async function main(ns) {
             ++i;
             await ns.sleep(60000);
         }
+        await ns.sleep(5000);
     }
     
-        await ns.sleep(60000);    
+   
 }
