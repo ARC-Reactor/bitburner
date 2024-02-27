@@ -21,8 +21,8 @@ export async function main(ns) {
             let hostname = ns.purchaseServer("pserv-" + i, ram);
             ns.scp(scriptname, hostname);
             let hostRam = ns.getServerMaxRam(hostname);
-            let ram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
-            ns.exec(scriptname, hostname, ram);
+            let scriptram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
+            ns.exec(scriptname, hostname, scriptram);
             ++i;
             await ns.sleep(60000);
         }
@@ -42,8 +42,8 @@ export async function main(ns) {
             let hostname = ns.purchaseServer("pserv-" + i, ram);
             ns.scp(scriptname, hostname);
             let hostRam = ns.getServerMaxRam(hostname);
-            let ram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
-            ns.exec(scriptname, hostname, ram);
+            let scriptram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
+            ns.exec(scriptname, hostname, scriptram);
             ++i;
             await ns.sleep(60000);
         }
@@ -63,8 +63,8 @@ export async function main(ns) {
             let hostname = ns.purchaseServer("pserv-" + i, ram);
             ns.scp(scriptname, hostname);
             let hostRam = ns.getServerMaxRam(hostname);
-            let ram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
-            ns.exec(scriptname, hostname, ram);
+            let scriptram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
+            ns.exec(scriptname, hostname, scriptram);
             ++i;
             await ns.sleep(60000);
         }
@@ -84,8 +84,8 @@ export async function main(ns) {
             let hostname = ns.purchaseServer("pserv-" + i, ram);
             ns.scp(scriptname, hostname);
             let hostRam = ns.getServerMaxRam(hostname);
-            let ram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
-            ns.exec(scriptname, hostname, ram);
+            let scriptram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
+            ns.exec(scriptname, hostname, scriptram);
             ++i;
             await ns.sleep(60000);
         }
@@ -105,8 +105,8 @@ export async function main(ns) {
             let hostname = ns.purchaseServer("pserv-" + i, ram);
             ns.scp(scriptname, hostname);
             let hostRam = ns.getServerMaxRam(hostname);
-            let ram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
-            ns.exec(scriptname, hostname, ram);
+            let scriptram = Math.trunc(hostRam / ns.getScriptRam(scriptname, hostname));
+            ns.exec(scriptname, hostname, scriptram);
             ++i;
             await ns.sleep(60000);
         }
